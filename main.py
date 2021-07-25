@@ -143,12 +143,12 @@ def VacunadosPorProvincia(provincia:str):
     contenido = cursor.fetchall()
     conexion.commit()
     for i in contenido:
-        Datos.append({"ok":True,"Cedula":i[0],"Nombre": i[1], "Apellido": i[2], "Telefono": i[3],"NombreVacuna":i[4],
+        Datos.append({"Cedula":i[0],"Nombre": i[1], "Apellido": i[2], "Telefono": i[3],"NombreVacuna":i[4],
                     "Provincia":i[5],"Fecha_Vacunacion":i[6], "IdUsuario":i[7]})
     if Datos == []:
         return {"ok":False}
     else:
-        return Datos
+        return {"ok":True,"Data":Datos}
 
 @app.get("/api/VacunadosPorMarcaDeVacuna")
 def VacunadosPorMarcaDeVacuna():
