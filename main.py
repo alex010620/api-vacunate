@@ -237,7 +237,7 @@ def NuevaProvincia(Nombre:str):
     except TypeError:
         return{"ok":False}
 #UPDATE
-@app.put("/api/ActualizarProvincia/{IdProvincia}/{NuevoNombre}")
+@app.get("/api/ActualizarProvincia/{IdProvincia}/{NuevoNombre}")
 def ActualizarProvincia(IdProvincia:str,NuevoNombre:str):
     try:
         conexion = sqlite3.connect('BaseDeDatos.db')
